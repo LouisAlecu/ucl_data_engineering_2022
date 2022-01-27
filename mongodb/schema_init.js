@@ -1,4 +1,4 @@
-use ucl_messenger
+db.ucl_messenger.deleteMany({})
 
 db.ucl_messenger.insertOne({
     "first_name": "Bilbo",
@@ -43,6 +43,4 @@ db.ucl_messenger.insertOne({
     },
     "type": "student"
 })
-
-
 
