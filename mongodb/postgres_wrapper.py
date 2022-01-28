@@ -129,9 +129,9 @@ class PGWrapper:
 
 
 config = {
-    "database": "postgres",
-    "user": "postgres",
-    "password": "qwerty123",
+    "database": "CHANGEME",
+    "user": "CHANGEME",
+    "password": "CHANGEME",
     "host": "depgdb.crhso94tou3n.eu-west-2.rds.amazonaws.com",
     "port": 5432,
 }
