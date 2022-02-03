@@ -66,6 +66,33 @@ class ETLPostgresToMongo:
         return db_results
 
     def transform_users(self, records: List[Dict]) -> Dict:
+        """
+        Custom method for transforming users. For another table
+        you need to create your own transformation method and use that.
+
+        :param records: List[Dict] - users records from Postgres queried with PGWrapper.query_as_list_of_dicts
+
+        :return transformed_results: Dict - transformed results
+        """
+        # Read on python inline functions, map, filter, reduce
+        # It is Python's basic way of writing code in a functional programming style
+        # You can achieve the same thing by iterating with a for loop or with
+        # list comprehensions
+
+        # Another option to the inline function is to use the operator package and
+        # the itemgetter method as such:
+        # import operator
+        # get_fct= operator.itemgetter('user_id')
+        # postgres_user_ids = list(map(get_fct, records))
+
+        # With list comprehensions:
+        # postgres_user_ids = [i['user_id'] for i in records]
+
+        # The basic way is :
+        # postgres_user_ids = []
+        # for record in records:
+        #   postgres_user_ids.append(record['user_id'])
+
         transformed_results = {
             "postgres_user_ids": list(map(lambda row: row["user_id"], records)),
             "first_names": list(map(lambda row: row["first_name"], records)),
