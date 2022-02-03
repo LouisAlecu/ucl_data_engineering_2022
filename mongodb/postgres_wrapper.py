@@ -160,6 +160,7 @@ def quick_test_with_context_manager():
     return results
 
 
-quick_test_with_context_manager()
-print("----")
-quick_test_without_context_manager()
+if __name__ == "__main__":
+    quick_test_with_context_manager()
+    print("----")
+    quick_test_without_context_manager()

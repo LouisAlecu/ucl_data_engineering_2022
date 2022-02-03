@@ -35,14 +35,15 @@ class MongoWrapper:
         )
 
 
-config = {
-    "user": "CHANGEME",
-    "password": "CHANGEME",
-    "database": "CHANGEME",
-    "host": "13.40.61.62",
-}
-db_con = MongoWrapper(config)
-db_con.connect()
+if __name__ == "__main__":
+    config = {
+        "user": "CHANGEME",
+        "password": "CHANGEME",
+        "database": "CHANGEME",
+        "host": "13.40.61.62",
+    }
+    db_con = MongoWrapper(config)
+    db_con.connect()
 
-mongo_collection = db_con.client.CHANGEME.ucl_messenger
-mongo_collection.insert_one({"this_is_a_test_key": 123})
+    mongo_collection = db_con.client.CHANGEME.ucl_messenger
+    mongo_collection.insert_one({"this_is_a_test_key": 123})
